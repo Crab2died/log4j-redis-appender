@@ -10,6 +10,10 @@ import org.apache.log4j.spi.ThrowableInformation;
 import java.util.Date;
 import java.util.Map;
 
+/**
+ * LOG信息的扩展类，主要是继承{@link org.apache.log4j.spi.LoggingEvent}
+ * 并对其日志信息进行扩展补充
+ */
 public class LoggingEventX extends LoggingEvent {
 
     private Date logTime;

@@ -30,13 +30,13 @@ public class RedisAppender extends AppenderSkeleton {
     private int maxIdle = 0;
     private int minIdle = 0;
     private boolean blockWhenExhaused = false;
-    private String evictionPolicyClassName = "";
+    private String evictionPolicyClassName;
     private boolean lifo = false;
     private boolean testOnBorrow = false;
     private boolean testWhileIdle = false;
     private boolean testOnReturn = false;
 
-    private String dateFormatter = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+    private String dateFormatter = "yyyy-MM-dd'T'HH:mm:ss.SSS'+0800'";
     private String logFormatFeature;
 
     static private boolean jedisHeath = true;
@@ -48,7 +48,6 @@ public class RedisAppender extends AppenderSkeleton {
     public void activateOptions() {
         super.activateOptions();
 
-        // redis key
         JedisPoolConfig poolConfig = new JedisPoolConfig();
         if (lifo) {
             poolConfig.setLifo(lifo);
@@ -93,9 +92,10 @@ public class RedisAppender extends AppenderSkeleton {
             jedisPool = new JedisPool(poolConfig, host, port, timeout);
         }
 
+        // 配置连接实验
         try {
             Jedis jedis = jedisPool.getResource();
-            String info = jedis.select(dbIndex);
+            jedis.select(dbIndex);
         } catch (Exception e) {
             jedisHeath = false;
             LogLog.error("Redis is can not connected", e);
@@ -163,7 +163,7 @@ public class RedisAppender extends AppenderSkeleton {
             Jedis jedis = jedisPool.getResource();
             jedis.select(dbIndex);
             Long listSize = jedis.rpush(key, msg);
-            LogLog.error(String.format("[%s] the log list size number is :%s", key, listSize));
+            LogLog.debug(String.format("[%s] the log list size number is :%s", key, listSize));
             jedis.close();
         }
     }
