@@ -10,4 +10,5 @@ log4j日志写入redis扩展
 
 
 ## 三. 下载链接
-[码云源码链接](http://git.oschina.net/Crab2Died/log4j-redis-appender)
+* [码云源码地址](http://git.oschina.net/Crab2Died/log4j-redis-appender)
+* [github源码地址](https://github.com/Crab2died/log4j-redis-appender)
