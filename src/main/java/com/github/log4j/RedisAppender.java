@@ -107,7 +107,7 @@ public class RedisAppender extends AppenderSkeleton {
     protected void append(LoggingEvent loggingEvent) {
         if (!jedisHeath) return;
         try {
-            if (null != layout) {
+            if (null != getLayout()) {
                 pushLog2Redis(layout.format(loggingEvent));
             } else {
                 Object logData;
@@ -143,7 +143,7 @@ public class RedisAppender extends AppenderSkeleton {
 
     @Override
     public boolean requiresLayout() {
-        return false;
+        return true;
     }
 
     static private Object defaultLogFormat(LoggingEvent loggingEvent) {
