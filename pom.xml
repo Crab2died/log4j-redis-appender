@@ -4,11 +4,12 @@
 
     <groupId>com.github.crab2died</groupId>
     <artifactId>log4j-redis-appender</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>log4j-redis-appender</name>
     <url>https://github.com/Crab2died/log4j-redis-appender</url>
+    <description>log4j redis appender</description>
 
     <licenses>
         <license>

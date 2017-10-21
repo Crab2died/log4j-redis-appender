@@ -13,7 +13,7 @@ log4j日志写入redis扩展
 <dependency>
     <groupId>com.github.crab2died</groupId>
     <artifactId>log4j-redis-appender</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
