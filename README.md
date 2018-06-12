@@ -10,6 +10,10 @@
 ```
 log4j日志写入redis扩展
 
+![version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)
+[![GitHub license](https://img.shields.io/github/license/Crab2died/log4j-redis-appender.svg)](https://github.com/Crab2died/log4j-redis-appender/blob/master/LICENSE)
+[![Maven Central](https://img.shields.io/maven-central/v/org.apache.maven/apache-maven.svg)](http://search.maven.org/#artifactdetails%7Ccom.github.crab2died%7Clog4j-redis-appender%7C1.0.0%7Cjar)
+
 ## 一. 依赖
 ![maven jar 依赖](https://raw.githubusercontent.com/Crab2died/log4j-redis-appender/master/src/test/resources/relyon.png)
 
